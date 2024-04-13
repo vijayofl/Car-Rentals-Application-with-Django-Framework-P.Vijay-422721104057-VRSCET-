@@ -1,0 +1,358 @@
+{% block content %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rentals - Home</title>
+    <!-- Link to your CSS file -->
+
+    <link rel="stylesheet" href="{% static 'css/home/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-x0F2X2nQF4m2jV/1AE5wz6hy0nTh0T0ub+wfXmG4B6Bd1Jd8BKNZPIsjeNUTr1sUdMOqG73mCmTOiyFxKHsZLg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <style>
+        .carousel-item img {
+            max-height: 400px; /* Adjust the max height as needed */
+            width: auto; /* Ensures the width adjusts proportionally */
+        }
+    </style>
+</head>
+
+<body style="background-image: url('/static/img/home/bg.png');">
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container-fluid">
+                <!-- Logo and Company Name -->
+                <a class="navbar-brand" href="#">
+                    <img src="/static/img/logo.png" class="rounded-circle" alt="Car Rentals Logo" height="40">
+                    <!-- Sample Logo -->
+                    Car Rentals
+                </a>
+                <!-- Toggle Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Navigation Links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Move navigation links to the right -->
+                        <li class="nav-item mx-2">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="{% url "cars:available_cars" %}">Available Cars</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="{% url "aboutus:aboutus" %}">AboutUs</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="btn btn-outline-primary" href="{% url "base:logout" %}">logout</a>                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container hero">
+        <div class="row">
+            <div class="col-md-6 text-center align-self-center">
+                <p class="landing-page-text">Experience the thrill of the open road with Car Rentals.</p>
+                <p class="landing-page-subtext">From compact cars to spacious SUVs, we have the perfect vehicle for
+                    every adventure.</p>
+                <a href="{% url "cars:available_cars" %}" class="btn btn-lg btn-outline-success">Rent Now</a>
+            </div>
+
+            <div class="col-md-6">
+                <img src="/static/img/home/1.png" class=" wow animate__animated animate__backInLeft a1-animation a"
+                    style="width: 100%;">
+            </div>
+        </div>
+    </div>
+    <section id="sec-2" class="p-5 bg-secondary">
+        <div class="container">
+          <div class="row">
+            
+            <!---card1-->
+            <div class="col-md-3 mb-2">
+              <div class="card h-100">
+                <div class="card-body text-center">
+                  <img class="img-fluid"
+                    src="https://bmw.bmvitoria.com.br/storage/app/uploads/public/638/5fd/2a3/6385fd2a33668520828853.png"
+                    alt="">
+                  <p class="h1 pt-2">BMW iX</p>
+                  <p>FULL-ELECTRIC</p>
+                  <h3>Starting from ₹ 12,100,000</h3>
+                </div>
+                <div class="card-footer bg-white text-center"><button class="btn btn-dark">Rent Now</button></div>
+              </div>
+            </div>
+  
+            <!---card2-->
+            <div class="col-md-3 mb-2">
+              <div class="card h-100">
+                <div class="card-body text-center">
+                  <img class="img-fluid" src="/static/img/home/bmw-x7-inform-lines-02-02.jpg.asset.1562841834641.jpg" alt="">
+                  <p class="h1 pt-2">THE NEW BMW X7</p>
+                  <p>PETROL•DIESEL</p>
+                  <h3>Starting from ₹ 12,200,000</h3>
+                </div>
+                <div class="card-footer bg-white text-center"><button class="btn btn-dark">Rent Now</button></div>
+              </div>
+            </div>
+  
+            <!---card3-->
+            <div class="col-md-3 mb-2">
+              <div class="card h-100">
+                <div class="card-body text-center">
+                  <img class="img-fluid" src="/static/img/home/neues-gesicht-bmw-x7.jpg" alt="">
+                  <p class="h1 pt-2">THE BMW X3</p>
+                  <p>DIESEL</p>
+                  <h3>Starting from ₹ 6,750,000
+                  </h3>
+  
+                </div>
+                <div class="card-footer bg-white text-center"><button class="btn btn-dark">Rent Now</button></div>
+              </div>
+            </div>
+  
+            <!---card4-->
+            <div class="col-md-3 mb-2">
+              <div class="card h-100">
+                <div class="card-body text-center">
+                  <img class="img-fluid" src="/static/img/home/BMW-M2-Exterior-141232.jpg" alt="">
+                  <p class="h1 pt-2">THE ALL-NEW BMW M2 COUPÉ</p>
+                  <p>PETROL</p>
+                  <h3>Starting from ₹ 9,800,000</h3>
+                </div>
+                <div class="card-footer bg-white text-center"><button class="btn btn-dark">Rent Now</button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <section id="sec-2" class="p-5 bg-secondary">
+        <div class="container">
+          <div class="row">
+            <!---card5-->
+            <div class="col-md-3 mb-2">
+              <div class="card h-100">
+                <div class="card-body text-center">
+                  <img class="img-fluid"
+                    src="/static/img/home/audi.jpeg"
+                    alt="">
+                  <p class="h1 pt-2">BMW iX</p>
+                  <p>FULL-ELECTRIC</p>
+                  <h3>Starting from ₹ 12,100,000</h3>
+                </div>
+                <div class="card-footer bg-white text-center"><button class="btn btn-dark">Rent Now</button></div>
+              </div>
+            </div>
+  
+            <!---card6-->
+            <div class="col-md-3 mb-2">
+              <div class="card h-100">
+                <div class="card-body text-center">
+                  <img class="img-fluid" src="/static/img/home/Audi-Q3.jpg" alt="">
+                  <p class="h1 pt-2">THE NEW BMW X7</p>
+                  <p>PETROL•DIESEL</p>
+                  <h3>Starting from ₹ 12,200,000</h3>
+                </div>
+                <div class="card-footer bg-white text-center"><button class="btn btn-dark">Rent Now</button></div>
+              </div>
+            </div>
+  
+            <!---card7-->
+            <div class="col-md-3 mb-2">
+              <div class="card h-100">
+                <div class="card-body text-center">
+                  <img class="img-fluid" src="/static/img/home/benzz.jpeg" alt="">
+                  <p class="h1 pt-2">THE BMW X3</p>
+                  <p>DIESEL</p>
+                  <h3>Starting from ₹ 6,750,000
+                  </h3>
+  
+                </div>
+                <div class="card-footer bg-white text-center"><button class="btn btn-dark">Rent Now</button></div>
+              </div>
+            </div>
+  
+            <!---card8-->
+            <div class="col-md-3 mb-2">
+              <div class="card h-100">
+                <div class="card-body text-center">
+                  <img class="img-fluid" src="/static/img/home/jag f.jpeg" alt="">
+                  <p class="h1 pt-2">THE ALL-NEW BMW M2 COUPÉ</p>
+                  <p>PETROL</p>
+                  <h3>Starting from ₹ 9,800,000</h3>
+                </div>
+                <div class="card-footer bg-white text-center"><button class="btn btn-dark">Rent Now</button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <section id="sec-2" class="p-5 bg-secondary">
+        <div class="container">
+          <div class="row">
+            <!---card9-->
+            <div class="col-md-3 mb-2">
+              <div class="card h-100">
+                <div class="card-body text-center">
+                  <img class="img-fluid"
+                    src="/static/img/home/jag xg.jpeg"
+                    alt="">
+                  <p class="h1 pt-2">BMW iX</p>
+                  <p>FULL-ELECTRIC</p>
+                  <h3>Starting from ₹ 12,100,000</h3>
+                </div>
+                <div class="card-footer bg-white text-center"><button class="btn btn-dark">Rent Now</button></div>
+              </div>
+            </div>
+  
+            <!---card10-->
+            <div class="col-md-3 mb-2">
+              <div class="card h-100">
+                <div class="card-body text-center">
+                  <img class="img-fluid" src="https://imgd.aeplcdn.com/664x374/n/cw/ec/53123/tiguan-exterior-right-front-three-quarter-4.jpeg?q=80" alt="">
+                  <p class="h1 pt-2">THE NEW BMW X7</p>
+                  <p>PETROL•DIESEL</p>
+                  <h3>Starting from ₹ 12,200,000</h3>
+                </div>
+                <div class="card-footer bg-white text-center"><button class="btn btn-dark">Rent Now</button></div>
+              </div>
+            </div>
+  
+            <!---card11-->
+            <div class="col-md-3 mb-2">
+              <div class="card h-100">
+                <div class="card-body text-center">
+                  <img class="img-fluid" src="/static/img/home/superb.jpeg" alt="">
+                  <p class="h1 pt-2">THE BMW X3</p>
+                  <p>DIESEL</p>
+                  <h3>Starting from ₹ 6,750,000
+                  </h3>
+  
+                </div>
+                <div class="card-footer bg-white text-center"><button class="btn btn-dark">Rent Now</button></div>
+              </div>
+            </div>
+  
+            <!---card12-->
+            <div class="col-md-3 mb-2">
+              <div class="card h-100">
+                <div class="card-body text-center">
+                  <img class="img-fluid" src="/static/img/home/scorpia.jpeg" alt="">
+                  <p class="h1 pt-2">THE ALL-NEW BMW M2 COUPÉ</p>
+                  <p>PETROL</p>
+                  <h3>Starting from ₹ 9,800,000</h3>
+                </div>
+                <div class="card-footer bg-white text-center"><button class="btn btn-dark">Rent Now</button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="about" id="about">
+        <div class="heading">
+            <span>About Us</span>
+            <h1>Best Customer Experience</h1>
+        </div>
+        <div class="about-container">
+            <div class="about-img">
+                <img src="img/about.png" alt="">
+            </div>
+            <div class="about-text">
+                <span>About Us</span>
+                <p>At Royal Cars pvt.ltd, we are driven by a passion for providing unparalleled travel experiences on wheels. As a leading car rental service, we pride ourselves on delivering exceptional service.</p>
+                <p>A diverse fleet of vehicles, and a seamless booking process. With us, your journey begins the moment you step into one of our meticulously maintained cars. Our team is dedicated to making your travel dreams a reality. Whether you're embarking on a road trip, exploring a new city, or simply need a reliable vehicle for your daily commute?.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+        </div>
+     </section>
+     <footer>
+        <div class="container">
+            <div class="row">
+                  <div class="col" id="company">
+                      <img src="img/jeep.png" alt="" class="logo">
+                      <p>
+                        We are specialized in renting a car, book your car of any brand.
+                        Try our reliable services.
+                      </p>
+                      <div class="social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                      </div>
+                  </div>
+
+
+                  <div class="col" id="services">
+                     <h3>Services</h3>
+                     <div class="links">
+                        <a href="#">Top Deals</a>
+                        <a href="#">All Cars</a>
+                        <a href="#">Rent Car</a>
+                        <a href="#">Brands</a>
+                     </div>
+                  </div>
+
+                  <div class="col" id="useful-links">
+                     <h3>Links</h3>
+                     <div class="links">
+                        <a href="#">About</a>
+                        <a href="#">Services</a>
+                        <a href="#">Our Policy</a>
+                        <a href="#">Help</a>
+                     </div>
+                  </div>
+
+                  <div class="col" id="contact">
+                      <h3>Contact</h3>
+                      <div class="contact-details">
+                         <i class="fa fa-location"></i>
+                         <p>HN-41, Iqbaltn Avenue, <br> LA, PAK</p>
+                      </div>
+                      <div class="contact-details">
+                         <i class="fa fa-phone"></i>
+                         <p>+92-313112185924</p>
+                      </div>
+                  </div>
+            </div>
+
+            <div class="row">
+                  <div class="form">
+                    <form action="">
+                        <input type="text" placeholder="Email here...">
+                        <button><i class="fa fa-paper-plane"></i></button>
+                    </form>
+                  </div>
+            </div>
+
+        </div>
+     </footer>
+</body>
+
+</html>
+
+
+{% endblock content %}
